@@ -4,16 +4,16 @@
 
 | Kennzahl | Expo | Flutter | Kotlin + Compose |
 |---|---:|---:|---:|
-| Phase A baut | — | — | Ja |
+| Phase A baut | Ja (Expo-Export) | — | Ja |
 | Phase B baut | — | — | — |
 | Phase C baut | — | — | — |
-| manuelle Codeänderungen | — | — | 0 |
-| gesamte KI-Runs | — | — | 1 Root-Run (+3 Sub-Agenten) |
-| Anforderungen Phase A (von 30) | — | — | 29 vorläufig |
-| Tests Phase A bestanden / gesamt | — | — | 13 / 14 |
-| Dauer Phase A | — | — | 36 min 12 s |
+| manuelle Codeänderungen | 0 | — | 0 |
+| gesamte KI-Runs | 1 Root-Run (+3 Sub-Agenten) | — | 1 Root-Run (+3 Sub-Agenten) |
+| Anforderungen Phase A (von 30) | 29,5 vorläufig | — | 29 vorläufig |
+| Tests Phase A bestanden / gesamt | 4 / 4 | — | 13 / 14 |
+| Dauer Phase A | 38 min 04 s | — | 36 min 12 s |
 | Dauer Phase C | — | — | — |
-| bekannte Bugs nach Phase B | — | — | Phase B offen; 1 Bug aus Phase A |
+| bekannte Bugs nach Phase B | Phase B offen; 2 QA-Findings aus Phase A | — | Phase B offen; 1 Bug aus Phase A |
 
 ## Bewertung (100 Punkte)
 
