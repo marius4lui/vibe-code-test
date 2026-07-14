@@ -8,6 +8,20 @@ Kontrollierter Vibe-Coding-Benchmark für drei moderne Android-Stacks:
 
 Verglichen wird nicht nur das visuelle Ergebnis. Im Mittelpunkt stehen ein erfolgreicher erster Build, Anforderungsabdeckung, notwendige Reparaturen, Testbarkeit und die Erweiterbarkeit um wiederkehrende Aufgaben.
 
+## Festgelegte KI-Konfiguration
+
+Für alle drei Benchmark-Runs wird dieselbe Codex-Konfiguration verwendet:
+
+| Einstellung | Wert |
+|---|---|
+| Codex-Modell | `gpt-5.6-sol` |
+| Reasoning-Level | `ultra` |
+| Ausführung | interaktive Codex-CLI-Sitzung |
+| Sandbox | `danger-full-access` |
+| Bestätigungen | `never` |
+
+Die weitreichende Sandbox-Konfiguration ist für diesen kontrollierten lokalen Benchmark vorgesehen, damit Dependency-Installation sowie Zugriffe auf Android-, Gradle-, Flutter- und Paketmanager-Caches nicht durch unterschiedliche Freigaben beeinflusst werden. Sie sollte nur auf einem vertrauenswürdigen Benchmark-Rechner verwendet werden.
+
 ## Repository
 
 ```text
@@ -56,6 +70,39 @@ Die Verzeichnisse unter `apps/` enthalten in der Baseline absichtlich keinen Que
 3. Einen komplett neuen Chat öffnen, den passenden Prompt aus `prompts/` unverändert übergeben und im zugehörigen `apps/<stack>/` arbeiten lassen.
 4. Nach jeder Phase committen und Messwerte sofort in `results/<stack>.md` eintragen.
 5. Nach allen Runs die Punkte in `scorecard.md` übertragen.
+
+## Codex-Startbefehle
+
+Die drei Runs werden nacheinander in getrennten Terminals gestartet. Jeder Befehl erzeugt einen neuen Codex-Chat:
+
+```bash
+cd ../vibe-benchmark-expo && codex \
+  --model gpt-5.6-sol \
+  --config 'model_reasoning_effort="ultra"' \
+  --sandbox danger-full-access \
+  --ask-for-approval never \
+  "$(cat prompts/expo-prompt.md)"
+```
+
+```bash
+cd ../vibe-benchmark-flutter && codex \
+  --model gpt-5.6-sol \
+  --config 'model_reasoning_effort="ultra"' \
+  --sandbox danger-full-access \
+  --ask-for-approval never \
+  "$(cat prompts/flutter-prompt.md)"
+```
+
+```bash
+cd ../vibe-benchmark-kotlin && codex \
+  --model gpt-5.6-sol \
+  --config 'model_reasoning_effort="ultra"' \
+  --sandbox danger-full-access \
+  --ask-for-approval never \
+  "$(cat prompts/kotlin-prompt.md)"
+```
+
+Phase A startet jeweils mit diesem Befehl. Phase B und Phase C werden anschließend im selben Framework-Chat mit den unveränderten Folgeprompts fortgeführt. Zwischen den Frameworks wird weder ein Chat fortgesetzt noch `codex resume` verwendet.
 
 ## Regeln
 

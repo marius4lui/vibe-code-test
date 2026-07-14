@@ -7,8 +7,10 @@
 | Framework / Stack | FRAMEWORK |
 | Branch | `benchmark/BRANCH` |
 | Baseline-Commit | — |
-| Modell / Snapshot | — |
-| Reasoning-Modus | — |
+| Modell / Snapshot | `gpt-5.6-sol` |
+| Reasoning-Modus | `ultra` |
+| Codex-CLI-Version | beim Run erfassen |
+| Sandbox / Approval | `danger-full-access` / `never` |
 | Datum / Zeitzone | — |
 | Rechner / OS | — |
 | Gerät / Emulator | — |

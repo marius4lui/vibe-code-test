@@ -4,6 +4,22 @@
 
 Der Benchmark untersucht, wie zuverlässig ein KI-Agent aus demselben Produktauftrag eine wartbare Android-App erzeugt. Bewertet werden One-Shot-Fähigkeit, Reparaturverhalten und Änderbarkeit. Das Protokoll trennt Agentenleistung von Unterschieden in Hardware, Toolchain und Hilfestellung.
 
+## Verbindliche Run-Konfiguration
+
+Alle drei Projekte werden mit Codex und exakt dieser Konfiguration erzeugt:
+
+```text
+Modell: gpt-5.6-sol
+Reasoning-Level: ultra
+Modus: interaktive Codex CLI
+Sandbox: danger-full-access
+Approval Policy: never
+```
+
+Die lokale Codex-Modellliste wurde vor Beginn geprüft; `gpt-5.6-sol` unterstützt den Reasoning-Level `ultra`. Die Codex-CLI-Version und alle Toolchain-Versionen werden am Tag des jeweiligen Runs zusätzlich in der Ergebnisdatei festgehalten.
+
+Die Runs erfolgen sequenziell in drei permanenten Git-Worktrees. Pro Framework wird ein vollständig neuer Codex-Chat gestartet. Die Phasen A, B und C eines Frameworks bleiben dagegen im selben Chat, damit Phase C die tatsächlich entstandene Architektur erweitert.
+
 ## Vor dem ersten Run
 
 Für alle drei Runs festhalten:
@@ -65,9 +81,22 @@ Bei parallelen Worktrees dürfen nicht gleichzeitig Emulator-, Gradle- oder Pack
 
 Der Agent darf in Phase A seine eigenen Prüfungen und Reparaturen innerhalb desselben Runs durchführen, weil dies Teil des Master-Prompts ist. Eine weitere Nachricht des Menschen zählt bereits als zusätzlicher KI-Run.
 
+Der Chat wird mit einem der folgenden, stackabhängigen Befehle gestartet:
+
+```bash
+codex \
+  --model gpt-5.6-sol \
+  --config 'model_reasoning_effort="ultra"' \
+  --sandbox danger-full-access \
+  --ask-for-approval never \
+  "$(cat prompts/<stack>-prompt.md)"
+```
+
+`<stack>` wird ausschließlich durch `expo`, `flutter` oder `kotlin` ersetzt. Der Befehl wird aus dem jeweiligen Worktree-Root ausgeführt. Die drei Prozesse werden nicht gleichzeitig gestartet, damit Downloads, Build-Daemons, Emulator und CPU-/RAM-Auslastung die Messwerte nicht gegenseitig beeinflussen.
+
 ## Phase B: eine Fehlerbehebungsrunde
 
-Im selben Framework-Chat exakt den Inhalt aus `prompts/phase-b-fix.md` senden. Keine individuellen Fehlermeldungen oder Hinweise ergänzen. Danach alle Messungen erneut durchführen und committen:
+Im weiterhin geöffneten Framework-Chat exakt den Inhalt aus `prompts/phase-b-fix.md` senden. Keine individuellen Fehlermeldungen oder Hinweise ergänzen und keinen neuen Chat starten. Danach alle Messungen erneut durchführen und committen:
 
 ```bash
 git add apps/<stack> results/<stack>.md
@@ -76,7 +105,7 @@ git commit -m "benchmark(<stack>): complete phase B repair"
 
 ## Phase C: Änderbarkeit
 
-Im selben Framework-Chat exakt den Inhalt aus `prompts/phase-c-recurring.md` senden. Prüfen:
+Im selben, seit Phase A bestehenden Framework-Chat exakt den Inhalt aus `prompts/phase-c-recurring.md` senden. Prüfen:
 
 - täglich, wöchentlich und monatlich auswählbar
 - Wiederholung wird persistent gespeichert
