@@ -1,5 +1,17 @@
 # Momentum Vibe-Mobile-Benchmark
 
+[![Deploy benchmark site to GitHub Pages](https://github.com/marius4lui/vibe-code-test/actions/workflows/pages.yml/badge.svg)](https://github.com/marius4lui/vibe-code-test/actions/workflows/pages.yml)
+
+> Drei Mobile-Stacks, ein identischer Produktauftrag und ein kontrollierter Ablauf von One-Shot bis Architekturänderung.
+
+## Benchmark-Website
+
+Die visuelle GitHub-Pages-Auswertung liegt unter [`docs/`](docs/) und wird bei Änderungen auf `main` automatisch veröffentlicht. Sie enthält die Framework-Scorecard, den Drei-Phasen-Ablauf und eine vorbereitete Screenshot-Galerie für alle wichtigen App-Zustände.
+
+**Live:** [marius4lui.github.io/vibe-code-test](https://marius4lui.github.io/vibe-code-test/)
+
+Screenshots werden nach den Runs unter [`docs/assets/screenshots/`](docs/assets/screenshots/) abgelegt. Die erwarteten Dateinamen und einheitlichen Aufnahmevorgaben stehen in der dortigen README.
+
 Kontrollierter Vibe-Coding-Benchmark für drei moderne Android-Stacks:
 
 - Expo / React Native mit TypeScript und Expo Router

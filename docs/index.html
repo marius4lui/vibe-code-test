@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f1ea" />
+    <meta
+      name="description"
+      content="Momentum: Ein kontrollierter Vibe-Coding-Benchmark für Expo, Flutter und Kotlin mit Jetpack Compose."
+    />
+    <title>Momentum — Vibe Mobile Benchmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Momentum Startseite">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>Momentum</span>
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#vergleich">Vergleich</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#galerie">Galerie</a>
+        <a class="nav-cta" href="https://github.com/marius4lui/vibe-code-test/blob/main/scorecard.md">Scorecard</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="live-dot"></span> Benchmark läuft</p>
+          <h1>Drei Stacks.<br />Ein ehrlicher Prompt.</h1>
+          <p class="hero-lead">
+            Wie gut baut Codex dieselbe Mobile-App mit Expo, Flutter und nativem
+            Android? Momentum misst nicht nur schöne Screens, sondern Builds,
+            Reparaturen, Tests und echte Erweiterbarkeit.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#vergleich">Benchmark ansehen</a>
+            <a class="button secondary" href="https://github.com/marius4lui/vibe-code-test/blob/main/BENCHMARK.md">Methodik lesen <span>↗</span></a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>Modell</dt><dd>GPT-5.6 SOL</dd></div>
+            <div><dt>Reasoning</dt><dd>Ultra</dd></div>
+            <div><dt>Maximal</dt><dd>100 Punkte</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Drei App-Vorschauen">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="phone phone-left">
+            <div class="phone-screen screenshot" data-image="assets/screenshots/flutter-dashboard.webp">
+              <div class="screen-fallback"><span>Flutter</span><strong>Dashboard</strong></div>
+            </div>
+          </div>
+          <div class="phone phone-main">
+            <div class="phone-screen screenshot" data-image="assets/screenshots/expo-dashboard.webp">
+              <div class="screen-fallback"><span>Expo</span><strong>Dashboard</strong></div>
+            </div>
+          </div>
+          <div class="phone phone-right">
+            <div class="phone-screen screenshot" data-image="assets/screenshots/kotlin-dashboard.webp">
+              <div class="screen-fallback"><span>Kotlin</span><strong>Dashboard</strong></div>
+            </div>
+          </div>
+          <p class="visual-note">Echte App-Screens ersetzen diese Vorschau nach den Runs.</p>
+        </div>
+      </section>
+
+      <section class="manifesto section-pad">
+        <p class="section-kicker">Die zentrale Frage</p>
+        <blockquote>
+          Welche Technologie liefert beim Vibe Coding nicht nur die schönste Demo,
+          sondern die App, die <em>beim ersten Prompt baut</em> und sich später sauber ändern lässt?
+        </blockquote>
+      </section>
+
+      <section class="comparison section-pad" id="vergleich">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Live Scorecard</p>
+            <h2>Gleiche Aufgabe.<br />Andere Werkzeuge.</h2>
+          </div>
+          <p>Ergebnisse werden nach jeder Phase dokumentiert. Bis dahin bleiben Werte bewusst offen.</p>
+        </div>
+
+        <div class="stack-grid">
+          <article class="stack-card expo reveal">
+            <div class="stack-top"><span class="stack-index">01</span><span class="status">In Arbeit</span></div>
+            <div class="stack-symbol">E×</div>
+            <h3>Expo</h3>
+            <p>React Native · TypeScript<br />Expo Router · Expo Go</p>
+            <div class="score-line"><strong>—</strong><span>/ 100</span></div>
+            <div class="score-track"><i style="--score: 0%"></i></div>
+            <a href="https://github.com/marius4lui/vibe-code-test/blob/main/results/expo.md">Ergebnisprotokoll <span>→</span></a>
+          </article>
+
+          <article class="stack-card flutter reveal">
+            <div class="stack-top"><span class="stack-index">02</span><span class="status">In Arbeit</span></div>
+            <div class="stack-symbol">Fl</div>
+            <h3>Flutter</h3>
+            <p>Dart · Material 3<br />Widget & Integration Tests</p>
+            <div class="score-line"><strong>—</strong><span>/ 100</span></div>
+            <div class="score-track"><i style="--score: 0%"></i></div>
+            <a href="https://github.com/marius4lui/vibe-code-test/blob/main/results/flutter.md">Ergebnisprotokoll <span>→</span></a>
+          </article>
+
+          <article class="stack-card kotlin reveal">
+            <div class="stack-top"><span class="stack-index">03</span><span class="status">Bereit</span></div>
+            <div class="stack-symbol">K+</div>
+            <h3>Kotlin</h3>
+            <p>Jetpack Compose · Material 3<br />Navigation Compose</p>
+            <div class="score-line"><strong>—</strong><span>/ 100</span></div>
+            <div class="score-track"><i style="--score: 0%"></i></div>
+            <a href="https://github.com/marius4lui/vibe-code-test/blob/main/results/kotlin.md">Ergebnisprotokoll <span>→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="criteria section-pad">
+        <div class="section-heading compact">
+          <div><p class="section-kicker">100 Punkte</p><h2>Was wirklich zählt</h2></div>
+        </div>
+        <div class="criteria-grid">
+          <div class="criterion wide"><span>20</span><h3>Funktionen</h3><p>Wie vollständig Momentum tatsächlich umgesetzt wurde.</p></div>
+          <div class="criterion"><span>15</span><h3>Build</h3><p>Ohne manuelle Codeänderung.</p></div>
+          <div class="criterion"><span>15</span><h3>UI</h3><p>Qualität und Konsistenz.</p></div>
+          <div class="criterion"><span>15</span><h3>Architektur</h3><p>Wartbar statt zusammengeschrieben.</p></div>
+          <div class="criterion"><span>10</span><h3>Bedienung</h3><p>Navigation und zentrale Flows.</p></div>
+          <div class="criterion"><span>10</span><h3>Tests</h3><p>Ausführbar und aussagekräftig.</p></div>
+          <div class="criterion small"><span>5</span><h3>Fehler</h3></div>
+          <div class="criterion small"><span>5</span><h3>Tempo</h3></div>
+          <div class="criterion small"><span>5</span><h3>Phase C</h3></div>
+        </div>
+      </section>
+
+      <section class="process section-pad" id="ablauf">
+        <div class="section-heading light">
+          <div><p class="section-kicker">Kontrollierter Ablauf</p><h2>Drei Phasen.<br />Keine Sonderbehandlung.</h2></div>
+          <p>Jeder Stack startet vom selben Commit, mit demselben Modell und seinem eigenen frischen Chat.</p>
+        </div>
+        <ol class="phase-list">
+          <li class="reveal"><span class="phase-number">A</span><div><p>One-Shot</p><h3>Nur der Master-Prompt</h3><span>Startet es? Baut es? Wie viel wurde wirklich umgesetzt?</span></div><strong>01</strong></li>
+          <li class="reveal"><span class="phase-number">B</span><div><p>Repair</p><h3>Eine Fehlerbehebungsrunde</h3><span>Build, Linter und Tests prüfen. Gefundene Fehler beheben.</span></div><strong>02</strong></li>
+          <li class="reveal"><span class="phase-number">C</span><div><p>Change</p><h3>Wiederkehrende Aufgaben</h3><span>Täglich, wöchentlich oder monatlich, ohne Architektur-Neubau.</span></div><strong>03</strong></li>
+        </ol>
+      </section>
+
+      <section class="gallery section-pad" id="galerie">
+        <div class="section-heading">
+          <div><p class="section-kicker">Visual Evidence</p><h2>Jeder wichtige Screen.<br />Jeder Stack.</h2></div>
+          <p>Die Galerie ist bereits vorbereitet. Screenshots werden nach identischem Gerät und Zustand aufgenommen.</p>
+        </div>
+        <div class="gallery-tabs" role="tablist" aria-label="Framework auswählen">
+          <button class="active" data-gallery="expo" role="tab" aria-selected="true">Expo</button>
+          <button data-gallery="flutter" role="tab" aria-selected="false">Flutter</button>
+          <button data-gallery="kotlin" role="tab" aria-selected="false">Kotlin</button>
+        </div>
+        <div class="gallery-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="closing section-pad">
+        <p class="section-kicker">Open Benchmark</p>
+        <h2>Der Code zeigt das Ergebnis.<br />Die Git-Historie zeigt den Weg.</h2>
+        <div class="closing-actions">
+          <a class="button primary" href="https://github.com/marius4lui/vibe-code-test/blob/main/scorecard.md">Vollständige Scorecard</a>
+          <a class="button secondary" href="https://github.com/marius4lui/vibe-code-test">Repository ansehen</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#top"><span class="brand-mark">M</span><span>Momentum</span></a>
+      <p>Kontrollierter Mobile Vibe-Coding-Benchmark · 2026</p>
+      <a href="https://github.com/marius4lui/vibe-code-test/blob/main/BENCHMARK.md">Methodik ↗</a>
+    </footer>
+  </body>
+</html>
