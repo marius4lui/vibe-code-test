@@ -81,6 +81,7 @@ blockquote em { font-style: normal; box-shadow: inset 0 -.28em var(--lime); }
 .stack-symbol { width: 84px; height: 84px; margin: 55px 0 28px; display: grid; place-items: center; background: var(--ink); color: white; border-radius: 50%; font: 500 21px "DM Mono", monospace; }
 .stack-card h3 { margin: 0 0 8px; font: 600 42px "Newsreader", serif; letter-spacing: -.04em; }
 .stack-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.stack-result { margin-top: 15px; font: 10px "DM Mono", monospace; }
 .score-line { display: flex; align-items: baseline; gap: 7px; margin-top: auto; }
 .score-line strong { font: 500 56px "Newsreader", serif; }
 .score-line span { color: var(--muted); font: 11px "DM Mono", monospace; }
