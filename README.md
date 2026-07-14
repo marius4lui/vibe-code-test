@@ -12,6 +12,26 @@ Die visuelle GitHub-Pages-Auswertung liegt unter [`docs/`](docs/) und wird bei �
 
 Screenshots werden nach den Runs unter [`docs/assets/screenshots/`](docs/assets/screenshots/) abgelegt. Die erwarteten Dateinamen und einheitlichen Aufnahmevorgaben stehen in der dortigen README.
 
+## Erste Eindrücke
+
+<table>
+  <tr>
+    <th>Expo</th>
+    <th>Flutter</th>
+    <th>Kotlin + Compose</th>
+  </tr>
+  <tr>
+    <td><img src="docs/assets/screenshots/expo-dashboard.webp" alt="Momentum Dashboard mit Expo" width="280"></td>
+    <td><img src="docs/assets/screenshots/flutter-dashboard.webp" alt="Momentum Dashboard mit Flutter" width="280"></td>
+    <td><img src="docs/assets/screenshots/kotlin-dashboard.webp" alt="Momentum Dashboard mit Kotlin und Jetpack Compose" width="280"></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://marius4lui.github.io/vibe-code-test/#galerie">8 Screens ansehen</a></td>
+    <td align="center"><a href="https://marius4lui.github.io/vibe-code-test/#galerie">9 Screens ansehen</a></td>
+    <td align="center"><a href="https://marius4lui.github.io/vibe-code-test/#galerie">10 Screens ansehen</a></td>
+  </tr>
+</table>
+
 Kontrollierter Vibe-Coding-Benchmark für drei moderne Android-Stacks:
 
 - Expo / React Native mit TypeScript und Expo Router

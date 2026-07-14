@@ -1,27 +1,18 @@
 # Benchmark-Screenshots
 
-Lege die finalen Screenshots als WebP-Dateien in diesem Verzeichnis ab. Die GitHub-Pages-Seite erkennt sie automatisch; fehlende Dateien werden als neutrale Platzhalter dargestellt.
+Die finalen Screenshots werden aus den unveränderten Roh-PNGs im Ordner `Bilder` erzeugt. Die GitHub-Pages-Seite erkennt sie automatisch; fehlende Dateien werden als neutrale Platzhalter dargestellt.
 
-Für jeden Stack (`expo`, `flutter`, `kotlin`) sind diese Dateinamen vorgesehen:
+## Verarbeitung
 
-```text
-<stack>-onboarding.webp
-<stack>-dashboard.webp
-<stack>-tasks.webp
-<stack>-task-form.webp
-<stack>-dark-mode.webp
-<stack>-empty-state.webp
-<stack>-settings.webp
-<stack>-recurring.webp
+Vom Repository-Root ausführen:
+
+```bash
+./scripts/process-screenshots.sh ../vibe-benchmark-expo/Bilder
 ```
 
-Beispiele:
+Der Prozess entfernt ausschließlich die 96 Pixel hohe Android-Systemleiste am oberen Bildrand, entfernt Metadaten und exportiert mit WebP-Qualität 88. Die Originaldateien werden niemals überschrieben.
 
-```text
-expo-dashboard.webp
-flutter-dark-mode.webp
-kotlin-recurring.webp
-```
+Die tatsächlichen Dateinamen und ihre Zuordnung stehen reproduzierbar in `scripts/process-screenshots.sh`. Phase C kann später mit zusätzlichen `*-recurring.webp`-Screenshots ergänzt werden.
 
 ## Aufnahmevorgaben
 

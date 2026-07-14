@@ -1,13 +1,38 @@
-const galleryItems = [
-  ["onboarding", "Onboarding"],
-  ["dashboard", "Dashboard"],
-  ["tasks", "Aufgaben"],
-  ["task-form", "Task-Formular"],
-  ["dark-mode", "Dark Mode"],
-  ["empty-state", "Empty State"],
-  ["settings", "Einstellungen"],
-  ["recurring", "Phase C · Wiederholung"],
-];
+const galleries = {
+  expo: [
+    ["onboarding-1", "Onboarding · Fokus"],
+    ["onboarding-2", "Onboarding · Fortschritt"],
+    ["onboarding-3", "Onboarding · Lokal"],
+    ["dashboard", "Dashboard"],
+    ["categories", "Kategorien"],
+    ["tasks", "Aufgaben"],
+    ["settings", "Einstellungen"],
+    ["delete-dialog", "Löschdialog"],
+  ],
+  flutter: [
+    ["onboarding-1", "Onboarding · Fokus"],
+    ["onboarding-2", "Onboarding · Streak"],
+    ["onboarding-3", "Onboarding · Privat"],
+    ["dashboard", "Dashboard"],
+    ["task-form", "Neue Aufgabe"],
+    ["tasks", "Aufgaben"],
+    ["settings", "Einstellungen"],
+    ["dashboard-detail", "Dashboard · Details"],
+    ["today-tasks", "Heutige Aufgaben"],
+  ],
+  kotlin: [
+    ["onboarding-1", "Onboarding · Überblick"],
+    ["onboarding-2", "Onboarding · Streak"],
+    ["onboarding-3", "Onboarding · Rhythmus"],
+    ["dashboard", "Dashboard"],
+    ["dashboard-tasks", "Dashboard · Aufgaben"],
+    ["tasks", "Aufgaben & Filter"],
+    ["settings-system", "Einstellungen · System"],
+    ["settings-dark", "Einstellungen · Dunkel"],
+    ["task-edit", "Aufgabe bearbeiten"],
+    ["task-new", "Neue Aufgabe"],
+  ],
+};
 
 const gallery = document.querySelector(".gallery-grid");
 
@@ -24,7 +49,7 @@ function useImage(element, imagePath) {
 function renderGallery(stack) {
   gallery.replaceChildren();
 
-  galleryItems.forEach(([file, label], index) => {
+  galleries[stack].forEach(([file, label], index) => {
     const figure = document.createElement("figure");
     figure.className = "gallery-item";
     const shot = document.createElement("div");
