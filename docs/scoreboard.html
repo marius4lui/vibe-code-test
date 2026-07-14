@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171a17" />
+    <meta name="description" content="Scoreboard des Momentum Mobile Vibe-Coding-Benchmarks." />
+    <title>Scoreboard — Momentum Benchmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="scoreboard-page">
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="site-header scoreboard-header">
+      <a class="brand" href="index.html" aria-label="Momentum Startseite">
+        <span class="brand-mark" aria-hidden="true">M</span><span>Momentum</span>
+      </a>
+      <nav aria-label="Scoreboard-Navigation">
+        <a href="#stand">Stand</a>
+        <a href="#metriken">Metriken</a>
+        <a href="#wertung">100 Punkte</a>
+        <a class="nav-cta" href="index.html">Zur Galerie</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="score-hero" id="stand">
+        <div>
+          <p class="eyebrow"><span class="live-dot"></span> Phase A abgeschlossen</p>
+          <h1>Das<br />Scoreboard.</h1>
+        </div>
+        <div class="score-hero-copy">
+          <p>Alle drei Apps bauen. Die endgültige Reihenfolge bleibt offen, bis die 100-Punkte-Prüfung sowie Phase B und C abgeschlossen sind.</p>
+          <div class="score-legend"><span><i class="legend-objective"></i> objektiv gemessen</span><span><i class="legend-open"></i> Bewertung offen</span></div>
+        </div>
+      </section>
+
+      <section class="standings section-pad">
+        <div class="score-section-title">
+          <p class="section-kicker">Vorläufiger Stand</p>
+          <span>Stand: Phase A · 14. Juli 2026</span>
+        </div>
+        <div class="ranking-grid">
+          <article class="rank-card kotlin-rank">
+            <div class="rank-card-top"><span>Kotlin + Compose</span><strong>—</strong></div>
+            <div class="rank-device"><img src="assets/screenshots/kotlin-dashboard.webp" alt="Kotlin Momentum Dashboard" /></div>
+            <div class="rank-status"><span>Build ✓</span><span>13/14 Tests</span><span>36:12</span></div>
+            <p>Der schnellste Run. Ein fehlerhafter Matcher lässt den Compose-UI-Test rot.</p>
+            <a href="https://github.com/marius4lui/vibe-code-test/blob/main/results/kotlin.md">Vollständiger Bericht →</a>
+          </article>
+          <article class="rank-card expo-rank">
+            <div class="rank-card-top"><span>Expo</span><strong>—</strong></div>
+            <div class="rank-device"><img src="assets/screenshots/expo-dashboard.webp" alt="Expo Momentum Dashboard" /></div>
+            <div class="rank-status"><span>Export ✓</span><span>4/4 Tests</span><span>38:04</span></div>
+            <p>Alle Tests grün. Doctor und Formatcheck beanstanden zwei konkurrierende Lockfiles.</p>
+            <a href="https://github.com/marius4lui/vibe-code-test/blob/main/results/expo.md">Vollständiger Bericht →</a>
+          </article>
+          <article class="rank-card flutter-rank">
+            <div class="rank-card-top"><span>Flutter</span><strong>—</strong></div>
+            <div class="rank-device"><img src="assets/screenshots/flutter-dashboard.webp" alt="Flutter Momentum Dashboard" /></div>
+            <div class="rank-status"><span>Build ✓</span><span>4/4 Tests</span><span>1:03:04</span></div>
+            <p>Toolchain vollständig grün. Der Agentenlauf endete durch das Nutzungslimit ohne Abschlussausgabe.</p>
+            <a href="https://github.com/marius4lui/vibe-code-test/blob/main/results/flutter.md">Vollständiger Bericht →</a>
+          </article>
+        </div>
+        <p class="ranking-note"><strong>Noch keine Platzierung:</strong> Die Gedankenstriche sind Absicht. Eine Rangnummer erscheint erst nach der identischen 100-Punkte-Prüfung aller drei Stacks.</p>
+      </section>
+
+      <section class="metric-section" id="metriken">
+        <div class="metric-inner">
+          <div class="section-heading light">
+            <div><p class="section-kicker">Direkter Vergleich</p><h2>Was Phase A<br />bereits zeigt.</h2></div>
+            <p>Zeit und Tokens stammen aus den vollständigen Root- und Sub-Agenten-Transkripten. Cache-Tokens werden nicht als neue Tokens gezählt.</p>
+          </div>
+
+          <div class="metric-table" role="table" aria-label="Objektive Phase-A-Metriken">
+            <div class="metric-row metric-head" role="row"><span>Metrik</span><span>Expo</span><span>Flutter</span><span>Kotlin</span></div>
+            <div class="metric-row" role="row"><strong>Laufzeit</strong><span>38:04</span><span>1:03:04</span><span class="best">36:12</span></div>
+            <div class="metric-row" role="row"><strong>Tests</strong><span class="best">4 / 4</span><span class="best">4 / 4</span><span>13 / 14</span></div>
+            <div class="metric-row" role="row"><strong>Sub-Agenten</strong><span class="best">3</span><span>8</span><span class="best">3</span></div>
+            <div class="metric-row" role="row"><strong>Aktive Tokens</strong><span>1.047.681</span><span>3.875.008</span><span class="best">977.090</span></div>
+            <div class="metric-row" role="row"><strong>Cache-Tokens</strong><span>31.631.872</span><span>76.932.096</span><span>34.649.856</span></div>
+            <div class="metric-row" role="row"><strong>Phase-A-Findings</strong><span>2</span><span>Limit-Abbruch</span><span>1</span></div>
+          </div>
+
+          <div class="bar-comparison">
+            <article><div class="bar-label"><span>Expo</span><strong>1,05 Mio.</strong></div><div class="metric-bar"><i style="--bar: 27%"></i></div></article>
+            <article><div class="bar-label"><span>Flutter</span><strong>3,88 Mio.</strong></div><div class="metric-bar"><i style="--bar: 100%"></i></div></article>
+            <article><div class="bar-label"><span>Kotlin</span><strong>0,98 Mio.</strong></div><div class="metric-bar"><i style="--bar: 25%"></i></div></article>
+            <p>Nicht gecachter Input plus Output, Root- und Sub-Agenten kombiniert.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="score-breakdown section-pad" id="wertung">
+        <div class="section-heading">
+          <div><p class="section-kicker">Bewertungsmatrix</p><h2>100 Punkte.<br />Keine Abkürzung.</h2></div>
+          <p>Die Felder bleiben offen, bis Codeprüfung, Screenshots und Nutzerflüsse nach derselben Rubrik bewertet wurden.</p>
+        </div>
+        <div class="breakdown-table">
+          <div class="breakdown-row breakdown-head"><span>Kategorie</span><span>Max.</span><span>Expo</span><span>Flutter</span><span>Kotlin</span></div>
+          <div class="breakdown-row"><strong>Build ohne manuelle Änderung</strong><span>15</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row"><strong>Anforderungen</strong><span>20</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row"><strong>UI & visuelle Konsistenz</strong><span>15</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row"><strong>Bedienung & Navigation</strong><span>10</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row"><strong>Architektur & Codequalität</strong><span>15</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row"><strong>Fehlerbehandlung</strong><span>5</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row"><strong>Tests & Testbarkeit</strong><span>10</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row"><strong>Performance & App-Größe</strong><span>5</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row"><strong>Erweiterbarkeit Phase C</strong><span>5</span><span>—</span><span>—</span><span>—</span></div>
+          <div class="breakdown-row breakdown-total"><strong>Gesamt</strong><span>100</span><span>—</span><span>—</span><span>—</span></div>
+        </div>
+      </section>
+
+      <section class="next-phases section-pad">
+        <p class="section-kicker">Was noch fehlt</p>
+        <div class="next-grid">
+          <article><span>B</span><div><h3>Repair-Runde</h3><p>Alle gefundenen Fehler mit demselben Folgeprompt beheben und erneut messen.</p></div></article>
+          <article><span>C</span><div><h3>Wiederkehrende Aufgaben</h3><p>Täglich, wöchentlich und monatlich ergänzen, ohne die Architektur neu zu bauen.</p></div></article>
+          <article><span>100</span><div><h3>Finales Ranking</h3><p>UI, Architektur, Bedienung und Erweiterbarkeit nach der festen Rubrik bewerten.</p></div></article>
+        </div>
+        <div class="closing-actions"><a class="button primary" href="https://github.com/marius4lui/vibe-code-test/blob/main/scorecard.md">Markdown-Scorecard</a><a class="button secondary" href="index.html">Screenshots vergleichen</a></div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="index.html"><span class="brand-mark">M</span><span>Momentum</span></a>
+      <p>Scoreboard · Phase A · 2026</p>
+      <a href="https://github.com/marius4lui/vibe-code-test">GitHub ↗</a>
+    </footer>
+  </body>
+</html>
